@@ -50,33 +50,43 @@ ul a {
 
  main h1{
     position: relative;
-   left: 250px;
-   bottom: 190px;
-   font-size: 10px;
+   left: 110px;
+   bottom: 100px;
+   font-size: 3px;
 }
+.display-font-sizes{
+font-size: 20px;
+max-width: 220px;
+}
+.container{
 
+    display: none;
+}
 .d-block{
-    height: 500px;
+   /* width: 15px;
+   height: 15px;
+   padding: 2px 2px; */
+   display: none;
 }
 
  header img{
-    width: 220px;
 padding: 5px;
 border-radius: 120px;
-
+width: 100px;
 }
 
 
-
-main p{
-    font-size: 35px;
+.display-font-sizesp{
+    font-size: 20px;
+    max-width: 340px;
     margin-left: 10px;
-    
+
 }
+
 
 main a {
     display: inline-block;
-    font-size: 34px;
+    font-size: 24px;
     text-decoration: none;
     width: 99%;
     padding: 15px 10px;
@@ -85,7 +95,7 @@ main a {
     background-color: aquamarine;
     margin: 10px;
     text-align: center;
-  
+  max-width: 320px;
 }
 
 main a:hover{
@@ -107,26 +117,40 @@ iframe{
     margin-left: 10px;
     text-decoration: underline;
     text-align: center;
+    max-width: 320px;
 }
 
 .textoUbicacion::before{
     content: '👇';
+    display: none;
 }
 .textoUbicacion::after{
     content: '👇';
+    display: none;
 }
 
 
 .mapita{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    padding: 20px;
+    max-width: 190px;
 }
 
 footer{
-background-color: aquamarine;
-font-size: 23px;
 border: black solid;
 }
+footer p{
+    background-color: aquamarine;
+font-size: 23px;
+padding: 20px;
+max-width: 350px;
+}
+
+
+
+
+
 
 /* main contratar */
 main{
@@ -147,15 +171,19 @@ border-radius: 120px;
 
  header h1{
     position: relative;
-    left: 250px;
-    bottom: 120px;
+    left: 120px;
+    bottom: 70px;
+    max-width: 250px;
     /* border: solid 1px black; */
  }
 
 main a{
     margin-left: 10px;
 }
-
+.texto__principal{
+    padding: 10px;
+    max-width: 350px;
+}
 
 body main form label{
     display: block;
@@ -165,6 +193,7 @@ body main form label{
     font-size: 30px;
     padding: 5px; 
     margin: 3px;
+    max-width: 350px;
 }
 
 body main form input{
@@ -179,8 +208,8 @@ background-color: rgb(233, 176, 72);
 
 .checkbox{
     position: relative;
-    top: 45px;
-    left: 55px;
+    top: 100px;
+    right: 125px;
 }
 
 
@@ -221,12 +250,15 @@ table{
     font-size: 35px;
     padding: 10px;
     text-decoration: underline;
+    max-width: 350px;
 }
 .precio__titulo::before{
     content: '👉';
+    display: none;
 }
 .precio__titulo::after{
     content: '👈';
+    display: none;
 }
 
 
@@ -287,12 +319,56 @@ height: 300px;
 }
 
 
+
+/* main tener una cita */
+
+
+
+
+
+
+
+
+
+
+
+/* main chatear */
+main h1{
+    max-width: 250px;
+}
+main p{
+    padding: 10px;
+    max-width: 380px;
+}
+body{
+background-color: aquamarine;
+
+}
+
+main{
+    height: 50%;
+}
+header nav ul a{
+    display: none;
+}
+  
+.ul{
+    display: none;
+}
+
+span{
+    font-size: 20px;
+    padding: 10px;
+    margin-left: 25px;
+    
+}
 .chat-container {
     display: flex;
     flex-direction: column; 
     height: 100vh;
     max-height: 100%;
     border: 5px solid #f1aa1c;
+    max-width: 350px;
     }
     
     .chat-header {
@@ -353,44 +429,6 @@ height: 300px;
    
 
 
-/* main tener una cita */
-
-
-
-
-
-
-
-
-
-
-
-/* main chatear */
-
-body{
-background-color: aquamarine;
-
-}
-
-main{
-    height: 50%;
-}
-header nav ul a{
-    display: none;
-}
-  
-.ul{
-    display: none;
-}
-
-span{
-    font-size: 35px;
-    padding: 10px;
-    margin-left: 75px;
-    
-}
-
-
 @media(min-width: 576px){
     /* span{
         display: none;
@@ -407,8 +445,141 @@ span{
     .precio__carta{
         grid-template-columns: repeat(2, 1fr);
     }
+    header img{
+        width: 220px;
+    }
 
+    .d-block{
+        height: 500px;
+        height: 500px;
+        max-width: 5000px;
+    }
+    main h1{
+        position: relative;
+       left: 20px;
+       bottom: 190px;
+       font-size: 10px;
+    }
+    .display-font-sizes{
+        position: relative;
+        left: 240px;
+        bottom: 190px;
+        font-size: 30px;
+        max-width: 5000px;
+        }
+        .container{
+        display: block;
+        }
+        .display-font-sizesp{
+            font-size: 40px;
+            max-width: 3600px;
+            margin-left: 10px;
+        }
+        main a{
+            display: inline-block;
+    font-size: 34px;
+    text-decoration: none;
+    width: 99%;
+    padding: 15px 10px;
+    text-align: left;
+    border: solid 5px  orange;
+    background-color: aquamarine;
+    margin: 10px;
+    text-align: center;
+            max-width: 5000px;
+        }
+        .textoUbicacion{
+            font-size: 35px;
+            margin-left: 10px;
+            text-decoration: underline;
+            text-align: center;
+            max-width: 3200px;
+        }
+        .textoUbicacion::before{
+            content: '👇';
+            display: inline-block;
+        }
+        
+        .textoUbicacion::after{
+            content: '👇';
+            display: inline-block;
+        }
+        .mapita{
+            display: flex;
+            justify-content: center;
+            max-width: 1900px;
+        }
+
+        footer{
+            border: black solid;
+            }
+            footer p{
+                background-color: aquamarine;
+            font-size: 23px;
+            padding: 20px;
+            max-width: 3500px;
+            }
+/* Contratar */
+header h1{
+    position: relative;
+    left: 250px;
+    bottom: 120px;
+    max-width: 2500px;
+    /* border: solid 1px black; */
+ }
+ body main form label{
+    display: block;
+    border: solid 3px;
+    margin-left: 10px;
+    background-color: yellowgreen;
+    font-size: 30px;
+    padding: 5px; 
+    margin: 3px;
+    max-width: 3500px;
 }
+ .texto__principal{
+    padding: 10px;
+    max-width: 3500px;
+}
+.checkbox{
+    position: relative;
+    top: 55px;
+    left: 105px;
+}
+.precio__titulo{
+    text-align: center;
+    font-size: 35px;
+    padding: 10px;
+    text-decoration: underline;
+    max-width: 3500px;
+}
+.precio__titulo::before{
+    content: '👉';
+   display: inline-block;
+}
+.precio__titulo::after{
+    content: '👈';
+   display: inline-block;
+}
+/* Chat */
+main h1{
+    left: 255px;
+    max-width: 2500px;
+}
+main p{
+    padding: 10px;
+    max-width: 3800px;
+}
+.chat-container {
+    display: flex;
+    flex-direction: column; 
+    height: 100vh;
+    max-height: 100%;
+    border: 5px solid #f1aa1c;
+    max-width: 2000px;
+    }
+}
+
 
 
 @media (min-width: 913px  ){
