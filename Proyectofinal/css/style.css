@@ -317,8 +317,10 @@ height: 300px;
     display: block;
     text-align: center;
 }
-
-
+.precio__verde:hover{
+    background-color: rgb(27, 215, 27);
+}
+ 
 
 /* main tener una cita */
 
@@ -360,7 +362,6 @@ span{
     font-size: 20px;
     padding: 10px;
     margin-left: 25px;
-    
 }
 .chat-container {
     display: flex;
@@ -465,7 +466,7 @@ span{
         left: 240px;
         bottom: 190px;
         font-size: 30px;
-        max-width: 5000px;
+        max-width: 600px;
         }
         .container{
         display: block;
@@ -535,7 +536,7 @@ header h1{
     font-size: 30px;
     padding: 5px; 
     margin: 3px;
-    max-width: 3500px;
+    max-width: 1500px;
 }
  .texto__principal{
     padding: 10px;
