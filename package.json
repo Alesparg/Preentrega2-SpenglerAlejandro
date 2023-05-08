@@ -1,0 +1,14 @@
+{
+  "name": "cursada",
+  "version": "1.0.0",
+  "description": "Este es un proyecto para un contador",
+  "main": "index.js",
+  "scripts": {
+   "build-sass": "sass ./sass/main.scss ./diseño/main.css -w"       
+  },
+  "author": "Alejandro Spengler",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
+}
