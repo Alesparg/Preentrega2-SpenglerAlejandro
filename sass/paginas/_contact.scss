@@ -1,3 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+ 
+}
+
 main{
     background-color: aquamarine;
 }
@@ -12,7 +20,7 @@ padding: 20px;
 border-radius: 120px;
  }
 
- header h1{
+ .titulo__servicio{
     position: relative;
     left: 120px;
     bottom: 70px;
@@ -22,6 +30,7 @@ border-radius: 120px;
 
 main a{
     margin-left: 10px;
+    
 }
 .texto__principal{
     padding: 10px;
@@ -42,17 +51,32 @@ body main form label{
 body main form input{
     font-size: 25px;
    margin-left: 10px;
-    border: solid 2px forestgreen  
+    border: solid 5px forestgreen;
+    border-radius: 10px;
+    width: 250px;
+    transition: all 1s;
+}
+
+input:focus{
+    border: solid 5px rgb(5, 188, 5);
+    width: 400px;
 }
 
 body main form input:hover{
 background-color: rgb(233, 176, 72);
 }
 
-.checkbox{
+.checkboxh{
     position: relative;
-    top: 100px;
-    right: 125px;
+    transition: all 1s;
+    position: relative;
+    top: 93px;
+    left: 70px;
+    
+}
+
+.checkbox:focus{
+    display: none;
 }
 
 body main form select{
@@ -121,6 +145,11 @@ table{
     box-shadow: 0 25px 50px -12px black;
     margin-left: 10px;
     margin-right: 10px;
+    transition: 1s;
+}
+
+.carta:hover{
+  transform:translateY(-15px);
 }
 
 .carta__header img{
@@ -138,6 +167,7 @@ height: 300px;
     margin-bottom: 20px;
     font-size: 20px;
     margin-left: 15px;
+    overflow-y: hidden;
 }
 
 .carta__descripcion{
@@ -157,6 +187,7 @@ height: 300px;
     width: 100%;
     display: block;
     text-align: center;
+    transition: 1.5s;
 }
 .precio__verde:hover{
     background-color: rgb(27, 215, 27);
@@ -171,14 +202,15 @@ height: 300px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
-
+    background-attachment: scroll;
+    overflow-y: hidden;
 
     &__contenedor{
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
+        overflow-y: hidden;
 
   
         &-elemento{
@@ -186,6 +218,7 @@ height: 300px;
             font-size: 40px;
             text-align: center;
             margin: 31px 0;
+            overflow-y: hidden;
 
             span{
                 font-size: 20px;
@@ -196,11 +229,14 @@ height: 300px;
 }
 
 @media (min-width: 768px){
+   main a{
+    width: 95%;
+   }
     .estadisticas__contenedor{
         flex-direction: row;
         justify-content: space-between;
     }
-    header h1{
+    .titulo__servicio{
         position: relative;
         left: 250px;
         bottom: 120px;
@@ -221,10 +257,10 @@ height: 300px;
         padding: 10px;
         max-width: 3500px;
     }
-    .checkbox{
+    .checkboxh{
         position: relative;
-        top: 55px;
-        left: 105px;
+        top: 48px;
+        left: 290px;
     }
     .precio__titulo{
         text-align: center;
@@ -243,6 +279,22 @@ height: 300px;
     }
 }
 
+@media (min-width: 992px ){
+
+    .precio__carta{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .imagen{
+        grid-template-columns: repeat(2, 1fr);
+    }
+.ul{
+    display: flex;
+}
+    header nav ul a{
+        display: block;
+    }
+    
+}
 @media (min-width: 992px ){
 
     .precio__carta{

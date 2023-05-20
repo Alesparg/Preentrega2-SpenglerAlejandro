@@ -1,5 +1,21 @@
-
-main h1{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // overflow-x: hidden;
+ 
+}
+.chat{
+    position: relative;
+    left: 250px;
+}
+.tilulo__chatp{
+    display: inline-block;
+    position: relative;
+    max-width: 250px;
+    // max-width: 50px;
+}
+.display-font-sizesz{
     max-width: 250px;
 }
 main p{
@@ -27,6 +43,9 @@ span{
     padding: 10px;
     margin-left: 25px;
 }
+h2{
+    overflow-y: hidden;
+  }
 .chat-container {
     display: flex;
     flex-direction: column; 
@@ -91,12 +110,42 @@ span{
     cursor: pointer;
     }
 
-
+    .rrss{
+        $socialIconos:(
+          twitter: #87ceeb,
+          instagram: #f27d90,
+          facebook: #0000ff,
+          whatsapp: #20cb20,
+          google-play: #d81515,
+          tiktok: #000000c8
+          );  
+    
+          @each $socialName, $socialColors in $socialIconos {
+              .#{$socialName} {
+                  color: white;
+                  font-size: 30px;
+                  text-align: center;
+    
+                  &:hover{
+                      color: $socialColors;
+                  }
+              }
+    
+          }
+      }
+    
+    
+      .footer__chat{
+        height: 200px;
+      }
     @media (min-width: 768px  ){
-        main h1{
-            left: 255px;
-            max-width: 2500px;
+        .display-font-sizesz{
+            max-width: 650px;
+            display: inline-block;
+            position: relative;
+            left: 250px;
         }
+        
         main p{
             padding: 10px;
             max-width: 3800px;
@@ -109,4 +158,10 @@ span{
             border: 5px solid #f1aa1c;
             max-width: 2000px;
             }
+            .footer__chat{
+                height: 200px;
+              }
+              h2{
+                overflow-y: hidden;
+              }
     }

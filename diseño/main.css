@@ -1,4 +1,206 @@
 @charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.chat {
+  position: relative;
+  left: 250px;
+}
+
+.tilulo__chatp {
+  display: inline-block;
+  position: relative;
+  max-width: 250px;
+}
+
+.display-font-sizesz {
+  max-width: 250px;
+}
+
+main p {
+  padding: 10px;
+  max-width: 380px;
+}
+
+body {
+  background-color: aquamarine;
+}
+
+main {
+  height: 50%;
+}
+
+header nav ul a {
+  display: none;
+}
+
+.ul {
+  display: none;
+}
+
+span {
+  font-size: 20px;
+  padding: 10px;
+  margin-left: 25px;
+}
+
+h2 {
+  overflow-y: hidden;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100%;
+  border: 5px solid #f1aa1c;
+  max-width: 350px;
+}
+
+.chat-header {
+  padding: 10px;
+  background-color: #075e54;
+  color: #fff;
+  background-color: rgba(48, 208, 155, 0.881);
+}
+
+.chat__img {
+  width: 125px;
+  height: 125px;
+  display: flex;
+  align-items: space-between;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: scroll;
+  padding: 10px;
+  background-color: rgba(48, 208, 155, 0.881);
+}
+
+.chat-messages ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-messages li {
+  margin-bottom: 10px;
+}
+
+.chat-footer {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(48, 208, 155, 0.881);
+}
+
+.chat-footer input[type=text] {
+  flex: 1;
+  padding: 5px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 3px;
+}
+
+.chat-footer button {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  background-color: #128c7e;
+  color: #fff;
+  cursor: pointer;
+}
+
+.rrss .twitter {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .twitter:hover {
+  color: #87ceeb;
+}
+.rrss .instagram {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .instagram:hover {
+  color: #f27d90;
+}
+.rrss .facebook {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .facebook:hover {
+  color: #0000ff;
+}
+.rrss .whatsapp {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .whatsapp:hover {
+  color: #20cb20;
+}
+.rrss .google-play {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .google-play:hover {
+  color: #d81515;
+}
+.rrss .tiktok {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .tiktok:hover {
+  color: rgba(0, 0, 0, 0.7843137255);
+}
+
+.footer__chat {
+  height: 200px;
+}
+
+@media (min-width: 768px) {
+  .display-font-sizesz {
+    max-width: 650px;
+    display: inline-block;
+    position: relative;
+    left: 250px;
+  }
+  main p {
+    padding: 10px;
+    max-width: 3800px;
+  }
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100%;
+    border: 5px solid #f1aa1c;
+    max-width: 2000px;
+  }
+  .footer__chat {
+    height: 200px;
+  }
+  h2 {
+    overflow-y: hidden;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 main {
   background-color: aquamarine;
 }
@@ -13,7 +215,7 @@ main img {
   border-radius: 120px;
 }
 
-header h1 {
+.titulo__servicio {
   position: relative;
   left: 120px;
   bottom: 70px;
@@ -44,17 +246,31 @@ body main form label {
 body main form input {
   font-size: 25px;
   margin-left: 10px;
-  border: solid 2px forestgreen;
+  border: solid 5px forestgreen;
+  border-radius: 10px;
+  width: 250px;
+  transition: all 1s;
+}
+
+input:focus {
+  border: solid 5px rgb(5, 188, 5);
+  width: 400px;
 }
 
 body main form input:hover {
   background-color: rgb(233, 176, 72);
 }
 
-.checkbox {
+.checkboxh {
   position: relative;
-  top: 100px;
-  right: 125px;
+  transition: all 1s;
+  position: relative;
+  top: 93px;
+  left: 70px;
+}
+
+.checkbox:focus {
+  display: none;
 }
 
 body main form select {
@@ -123,6 +339,11 @@ table {
   box-shadow: 0 25px 50px -12px black;
   margin-left: 10px;
   margin-right: 10px;
+  transition: 1s;
+}
+
+.carta:hover {
+  transform: translateY(-15px);
 }
 
 .carta__header img {
@@ -140,6 +361,7 @@ table {
   margin-bottom: 20px;
   font-size: 20px;
   margin-left: 15px;
+  overflow-y: hidden;
 }
 
 .carta__descripcion {
@@ -157,6 +379,7 @@ table {
   width: 100%;
   display: block;
   text-align: center;
+  transition: 1.5s;
 }
 
 .precio__verde:hover {
@@ -170,19 +393,22 @@ table {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
+  overflow-y: hidden;
 }
 .estadisticas__contenedor {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 }
 .estadisticas__contenedor-elemento {
   color: black;
   font-size: 40px;
   text-align: center;
   margin: 31px 0;
+  overflow-y: hidden;
 }
 .estadisticas__contenedor-elemento span {
   font-size: 20px;
@@ -190,11 +416,14 @@ table {
 }
 
 @media (min-width: 768px) {
+  main a {
+    width: 95%;
+  }
   .estadisticas__contenedor {
     flex-direction: row;
     justify-content: space-between;
   }
-  header h1 {
+  .titulo__servicio {
     position: relative;
     left: 250px;
     bottom: 120px;
@@ -215,10 +444,10 @@ table {
     padding: 10px;
     max-width: 3500px;
   }
-  .checkbox {
+  .checkboxh {
     position: relative;
-    top: 55px;
-    left: 105px;
+    top: 48px;
+    left: 290px;
   }
   .precio__titulo {
     text-align: center;
@@ -248,6 +477,502 @@ table {
   }
   header nav ul a {
     display: block;
+  }
+}
+@media (min-width: 992px) {
+  .precio__carta {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .imagen {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ul {
+    display: flex;
+  }
+  header nav ul a {
+    display: block;
+  }
+}
+main a {
+  display: inline-block;
+  position: relative;
+}
+
+.titulo__turno {
+  position: relative;
+  left: 120px;
+  bottom: 110px;
+}
+
+h5 {
+  padding: 12px;
+}
+
+.titulo__horarios {
+  display: inline-block;
+  position: relative;
+  left: 40px;
+  background-color: rgb(90, 197, 161);
+  white-space: nowrap;
+}
+
+li {
+  overflow-y: hidden;
+}
+
+.horarios {
+  display: inline-block;
+  position: relative;
+  left: -10px;
+  font-size: 25px;
+  overflow-y: hidden;
+}
+
+h6 {
+  text-align: center;
+  padding: 12px;
+}
+
+.titulo__direccion {
+  display: inline-block;
+  position: relative;
+  left: 120px;
+  background-color: rgb(90, 197, 161);
+}
+
+.direcciòn {
+  position: relative;
+  left: 90px;
+  font-size: 20px;
+}
+
+iframe {
+  display: inline-block;
+  max-width: 335px;
+}
+
+.rrss .twitter {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .twitter:hover {
+  color: #87ceeb;
+}
+.rrss .instagram {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .instagram:hover {
+  color: #f27d90;
+}
+.rrss .facebook {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .facebook:hover {
+  color: #0000ff;
+}
+.rrss .whatsapp {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .whatsapp:hover {
+  color: #20cb20;
+}
+.rrss .google-play {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .google-play:hover {
+  color: #d81515;
+}
+.rrss .tiktok {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.rrss .tiktok:hover {
+  color: rgba(0, 0, 0, 0.7843137255);
+}
+
+.footer__cita {
+  height: 500px;
+}
+
+@media (min-width: 768px) {
+  .titulo__turno {
+    position: relative;
+    left: 250px;
+    bottom: 180px;
+  }
+  .titulo__horarios {
+    display: inline-block;
+    position: relative;
+    left: 570px;
+    background-color: rgb(90, 197, 161);
+    white-space: nowrap;
+  }
+  .horarios {
+    display: inline-block;
+    position: relative;
+    left: 170px;
+    font-size: 25px;
+    overflow-y: hidden;
+  }
+  ul {
+    overflow-y: hidden;
+  }
+  h6 {
+    text-align: center;
+  }
+  .titulo__direccion {
+    display: inline-block;
+    position: relative;
+    left: 675px;
+    background-color: rgb(90, 197, 161);
+    white-space: nowrap;
+  }
+  .direcciòn {
+    position: relative;
+    left: 660px;
+    font-size: 20px;
+  }
+  iframe {
+    max-width: 1500px;
+  }
+  .footer__cita {
+    height: 100px;
+  }
+}
+.span {
+  overflow-y: hidden;
+}
+
+nav {
+  overflow-y: hidden;
+}
+
+main {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+header ul {
+  list-style-type: none;
+  text-decoration: none;
+  background-color: rgba(48, 208, 155, 0.881);
+  border: solid 3px;
+}
+
+.ul {
+  display: flex;
+  text-decoration: aquamarine;
+  color: aquamarine;
+  border: aquamarine;
+}
+
+ul a {
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.div {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ul {
+  display: flex;
+}
+
+.ul li {
+  margin: 0 140px;
+}
+
+.ul li:active {
+  transform: scale(0.7);
+}
+
+header h1 {
+  position: relative;
+  left: 110px;
+  bottom: 120px;
+  font-size: 3px;
+  overflow-y: hidden;
+}
+
+.display-font-sizes {
+  font-size: 20px;
+  max-width: 220px;
+}
+
+.container {
+  display: none;
+}
+
+.d-block {
+  display: none;
+}
+
+header img {
+  padding: 5px;
+  border-radius: 120px;
+  width: 100px;
+}
+
+.display-font-sizesp {
+  font-size: 20px;
+  max-width: 340px;
+  margin-left: 10px;
+}
+
+main a {
+  display: inline-block;
+  font-size: 24px;
+  text-decoration: none;
+  width: 99%;
+  padding: 15px 10px;
+  text-align: left;
+  border: solid 5px orange;
+  background-color: aquamarine;
+  margin: 10px;
+  text-align: center;
+  max-width: 320px;
+}
+
+main a:hover {
+  text-shadow: 4px 3px 2px rgb(255, 166, 0);
+}
+
+iframe {
+  margin-left: 10px;
+}
+
+.textoUbicacion {
+  font-size: 35px;
+  margin-left: 10px;
+  text-decoration: underline;
+  text-align: center;
+  max-width: 320px;
+}
+
+.textoUbicacion::before {
+  content: "👇";
+  display: none;
+}
+
+.textoUbicacion::after {
+  content: "👇";
+  display: none;
+}
+
+.mapita {
+  display: flex;
+  /* justify-content: center; */
+  padding: 20px;
+  max-width: 340px;
+  transition: 1s;
+}
+
+.mapita:hover {
+  transform: translateY(-15px);
+}
+
+.horarios__titulo {
+  display: inline-block;
+  position: relative;
+  left: 40px;
+}
+
+.horarios {
+  overflow-y: hidden;
+}
+
+.footer__index {
+  height: 800px;
+}
+
+.color__a {
+  color: black;
+}
+
+.color__a:hover {
+  color: orange;
+}
+
+.footer {
+  padding: 60px 20px;
+}
+.footer__contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+.footer__contenedor h4 {
+  color: orange;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.footer__contenedor-rrss .twitter {
+  color: white;
+  font-size: 30px;
+}
+.footer__contenedor-rrss .twitter:hover {
+  color: #87ceeb;
+}
+.footer__contenedor-rrss .instagram {
+  color: white;
+  font-size: 30px;
+}
+.footer__contenedor-rrss .instagram:hover {
+  color: #f27d90;
+}
+.footer__contenedor-rrss .facebook {
+  color: white;
+  font-size: 30px;
+}
+.footer__contenedor-rrss .facebook:hover {
+  color: #0000ff;
+}
+.footer__contenedor-rrss .whatsapp {
+  color: white;
+  font-size: 30px;
+}
+.footer__contenedor-rrss .whatsapp:hover {
+  color: #20cb20;
+}
+.footer__contenedor-rrss .google-play {
+  color: white;
+  font-size: 30px;
+}
+.footer__contenedor-rrss .google-play:hover {
+  color: #d81515;
+}
+.footer__contenedor-rrss .tiktok {
+  color: white;
+  font-size: 30px;
+}
+.footer__contenedor-rrss .tiktok:hover {
+  color: rgba(0, 0, 0, 0.7843137255);
+}
+
+footer ul {
+  color: aquamarine;
+}
+
+h4 {
+  margin-left: 30px;
+  overflow-y: hidden;
+}
+
+h3 {
+  overflow-y: hidden;
+}
+
+.footer__copy {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+footer {
+  background-image: linear-gradient(aquamarine 0% 5%, rgb(5, 66, 46));
+}
+
+@media (min-width: 768px) {
+  .precio__carta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  header img {
+    width: 220px;
+  }
+  .d-block {
+    height: 500px;
+    height: 500px;
+    max-width: 5000px;
+  }
+  header h1 {
+    position: relative;
+    left: 20px;
+    bottom: 190px;
+    font-size: 10px;
+    max-width: 2500px;
+    overflow-y: hidden;
+  }
+  .display-font-sizes {
+    position: relative;
+    left: 240px;
+    bottom: 190px;
+    font-size: 30px;
+    max-width: 600px;
+  }
+  .container {
+    display: block;
+  }
+  .display-font-sizesp {
+    font-size: 40px;
+    max-width: 3600px;
+    margin-left: 10px;
+  }
+  main a {
+    display: inline-block;
+    font-size: 34px;
+    text-decoration: none;
+    width: 99%;
+    padding: 15px 10px;
+    text-align: left;
+    border: solid 5px orange;
+    background-color: aquamarine;
+    margin: 10px;
+    text-align: center;
+    max-width: 5000px;
+  }
+  .textoUbicacion {
+    font-size: 35px;
+    margin-left: 10px;
+    text-decoration: underline;
+    text-align: center;
+    max-width: 3200px;
+  }
+  .textoUbicacion::before {
+    content: "👇";
+    display: inline-block;
+  }
+  .textoUbicacion::after {
+    content: "👇";
+    display: inline-block;
+  }
+  .mapita {
+    display: flex;
+    justify-content: center;
+    max-width: 1900px;
+  }
+  .horarios__titulo {
+    display: inline-block;
+    position: relative;
+    left: 580px;
+  }
+  .footer__index {
+    height: 400px;
+  }
+  .footer__contenedor {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 913px) {
+  span {
+    display: none;
+    width: 175px;
   }
 }
 

@@ -1,17 +1,28 @@
-
+.span{
+  
+    overflow-y: hidden;
+}
+nav{
+    overflow-y: hidden;
+}
 main{
     display: inline-block;
     margin-bottom: 30px;
     
 }
 
-ul{
+header ul{
     list-style-type: none;
     text-decoration: none;
     background-color: rgba(48, 208, 155, 0.881);
     border: solid 3px;
 }
-
+.ul{
+    display: flex;
+    text-decoration: aquamarine;
+    color: aquamarine;
+    border: aquamarine;
+} 
 ul a {
     text-decoration: none;
     font-size: 25px;
@@ -24,23 +35,30 @@ ul a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
+
+
 
 .ul{
     display: flex;
 }
 
+
 .ul li{
     margin: 0 140px;
 }
 
+.ul li:active{
+    transform: scale(0.7);
+}
 
-
- main h1{
+ header h1{
     position: relative;
    left: 110px;
-   bottom: 100px;
+   bottom: 120px;
    font-size: 3px;
+   overflow-y: hidden;
 }
 .display-font-sizes{
 font-size: 20px;
@@ -116,22 +134,99 @@ iframe{
     display: flex;
     /* justify-content: center; */
     padding: 20px;
-    max-width: 190px;
+    max-width: 340px;
+    transition: 1s;
 }
 
-footer{
-border: black solid;
-}
-footer p{
-    background-color: aquamarine;
-font-size: 23px;
-padding: 20px;
-max-width: 350px;
+.mapita:hover{
+    transform: translateY(-15px);
 }
 
+.horarios__titulo{
+    display: inline-block;
+    position: relative;
+    left: 40px;
+}
+
+.horarios{
+    overflow-y: hidden;
+}
+.footer__index{
+height: 800px;
+}
+.color__a{
+    color: black;
+}
+.color__a:hover{
+    color: orange;
+}
+.footer{
+    padding: 60px 20px;
+
+    &__contenedor{
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+
+
+    
+
+        h4{
+            color: orange;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+    &-rrss{
+      $socialIconos:(
+        twitter: #87ceeb,
+        instagram: #f27d90,
+        facebook: #0000ff,
+        whatsapp: #20cb20,
+        google-play: #d81515,
+        tiktok: #000000c8
+        );  
+
+        @each $socialName, $socialColors in $socialIconos {
+            .#{$socialName} {
+                color: white;
+                font-size: 30px;
+
+                &:hover{
+                    color: $socialColors;
+                }
+            }
+
+        }
+    }
+      
+    }
+}
+  footer ul{
+    color: aquamarine;
+  }
+
+  h4{
+    margin-left: 30px;
+    overflow-y: hidden;
+  }
+h3{
+    overflow-y: hidden;
+}
+  .footer__copy{
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  footer{
+    background-image: linear-gradient(aquamarine 0% 5%, rgb(5, 66, 46));
+    }
 
 
 @media (min-width: 768px  ){
+    
     .precio__carta{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -144,11 +239,13 @@ max-width: 350px;
         height: 500px;
         max-width: 5000px;
     }
-    main h1{
+    header h1{
         position: relative;
        left: 20px;
        bottom: 190px;
        font-size: 10px;
+       max-width: 2500px;
+       overflow-y: hidden;
     }
     .display-font-sizes{
         position: relative;
@@ -199,14 +296,24 @@ max-width: 350px;
             justify-content: center;
             max-width: 1900px;
         }
+        .horarios__titulo{
+            display: inline-block;
+            position: relative;
+            left: 580px;
+        }
+        
+        .footer__index{
+            height: 400px;
+            }
+            .footer__contenedor{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
 
-        footer{
-            border: black solid;
-            }
-            footer p{
-                background-color: aquamarine;
-            font-size: 23px;
-            padding: 20px;
-            max-width: 3500px;
-            }
+        @media (min-width: 913px  ){
+            span{
+                display: none;
+                width: 175px;
+               }
+               
         }

@@ -1,0 +1,128 @@
+main a{
+    display: inline-block;
+    position: relative;
+}
+
+.titulo__turno{
+    position: relative;
+    left: 120px;
+    bottom: 110px;
+
+}
+h5{
+    padding: 12px;
+}
+
+.titulo__horarios{
+    display: inline-block;
+    position: relative;
+    left: 40px;
+    background-color: rgb(90, 197, 161);
+white-space: nowrap;
+}
+li{
+    overflow-y: hidden;
+}
+.horarios{
+    display: inline-block;
+    position: relative;
+    left: -10px;
+    font-size: 25px;
+    overflow-y: hidden;
+}
+
+h6{
+    text-align: center;
+    padding: 12px;
+}
+.titulo__direccion{
+    display: inline-block;
+    position: relative;
+    left: 120px;
+    background-color: rgb(90, 197, 161);
+}
+.direcciòn{
+    position: relative;
+    left: 90px;
+    font-size: 20px;
+}
+iframe{
+    display: inline-block;
+    max-width: 335px;
+}
+.rrss{
+    $socialIconos:(
+      twitter: #87ceeb,
+      instagram: #f27d90,
+      facebook: #0000ff,
+      whatsapp: #20cb20,
+      google-play: #d81515,
+      tiktok: #000000c8
+      );  
+
+      @each $socialName, $socialColors in $socialIconos {
+          .#{$socialName} {
+              color: white;
+              font-size: 30px;
+              text-align: center;
+
+              &:hover{
+                  color: $socialColors;
+              }
+          }
+
+      }
+  }
+
+
+  .footer__cita{
+    height: 500px;
+  }
+
+
+  @media (min-width: 768px  ){
+    .titulo__turno{
+        position: relative;
+        left: 250px;
+        bottom: 180px;
+    }
+
+    .titulo__horarios{
+        display: inline-block;
+        position: relative;
+        left: 570px;
+        background-color: rgb(90, 197, 161);
+    white-space: nowrap;
+    }
+    .horarios{
+        display: inline-block;
+        position: relative;
+        left: 170px;
+        font-size: 25px;
+        overflow-y: hidden;
+    }
+    ul{
+        overflow-y: hidden;
+    }
+    h6{
+        text-align: center;
+    }
+    .titulo__direccion{
+        display: inline-block;
+        position: relative;
+        left: 675px;
+        background-color: rgb(90, 197, 161);
+        white-space: nowrap;
+    }
+    .direcciòn{
+        position: relative;
+        left: 660px;
+        font-size: 20px;
+    }
+    iframe{
+        max-width: 1500px;
+    }
+    .footer__cita{
+        height: 100px;
+      }
+  }
