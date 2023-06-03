@@ -1,3 +1,42 @@
+.nav__celu{
+
+    i{
+        font-size: 35px;
+    }
+
+    ul{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 25%;
+        background-color: rgba(48, 208, 155, 0.881);
+        width: 100%;
+        display: none;
+       
+ 
+      
+
+        li{
+            padding: 20px 0;
+            right: 50px;
+            text-align: center;
+
+
+            a{
+                font-weight: bold;
+                width: 100%;
+            }
+
+
+        }
+    }
+
+    &:hover ul{
+        display: block;
+    }
+}
+
+
 main a{
     display: inline-block;
     position: relative;
@@ -55,7 +94,7 @@ iframe{
       twitter: #87ceeb,
       instagram: #f27d90,
       facebook: #0000ff,
-      whatsapp: #20cb20,
+      whatsappp: #20cb20,
       google-play: #d81515,
       tiktok: #000000c8
       );  

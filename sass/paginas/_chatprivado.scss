@@ -5,6 +5,46 @@
     // overflow-x: hidden;
  
 }
+.nav__celu{
+
+    i{
+        font-size: 35px;
+    }
+
+    ul{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 25%;
+        background-color: rgba(48, 208, 155, 0.881);
+        width: 100%;
+        display: none;
+       
+ 
+      
+
+        li{
+            padding: 20px 0;
+            right: 50px;
+            text-align: center;
+            
+
+
+            a{
+                font-weight: bold;
+                width: 100%;
+            }
+
+           
+
+
+        }
+    }
+
+    &:hover ul{
+        display: block;
+    }
+}
 .chat{
     position: relative;
     left: 250px;
@@ -30,13 +70,7 @@ background-color: aquamarine;
 main{
     height: 50%;
 }
-header nav ul a{
-    display: none;
-}
-  
-.ul{
-    display: none;
-}
+
 
 span{
     font-size: 20px;
@@ -115,7 +149,7 @@ h2{
           twitter: #87ceeb,
           instagram: #f27d90,
           facebook: #0000ff,
-          whatsapp: #20cb20,
+          whatsappp: #20cb20,
           google-play: #d81515,
           tiktok: #000000c8
           );  
@@ -137,6 +171,13 @@ h2{
     
       .footer__chat{
         height: 200px;
+      }
+
+      .whatsapp{
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        
       }
     @media (min-width: 768px  ){
         .display-font-sizesz{

@@ -5,6 +5,31 @@
   box-sizing: border-box;
 }
 
+.nav__celu i {
+  font-size: 35px;
+}
+.nav__celu ul {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 25%;
+  background-color: rgba(48, 208, 155, 0.881);
+  width: 100%;
+  display: none;
+}
+.nav__celu ul li {
+  padding: 20px 0;
+  right: 50px;
+  text-align: center;
+}
+.nav__celu ul li a {
+  font-weight: bold;
+  width: 100%;
+}
+.nav__celu:hover ul {
+  display: block;
+}
+
 .chat {
   position: relative;
   left: 250px;
@@ -31,14 +56,6 @@ body {
 
 main {
   height: 50%;
-}
-
-header nav ul a {
-  display: none;
-}
-
-.ul {
-  display: none;
 }
 
 span {
@@ -139,12 +156,12 @@ h2 {
 .rrss .facebook:hover {
   color: #0000ff;
 }
-.rrss .whatsapp {
+.rrss .whatsappp {
   color: white;
   font-size: 30px;
   text-align: center;
 }
-.rrss .whatsapp:hover {
+.rrss .whatsappp:hover {
   color: #20cb20;
 }
 .rrss .google-play {
@@ -166,6 +183,12 @@ h2 {
 
 .footer__chat {
   height: 200px;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
 }
 
 @media (min-width: 768px) {
@@ -207,6 +230,31 @@ main {
 
 header {
   background-color: aquamarine;
+}
+
+.nav__celu i {
+  font-size: 35px;
+}
+.nav__celu ul {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 55%;
+  background-color: rgba(48, 208, 155, 0.881);
+  width: 100%;
+  display: none;
+}
+.nav__celu ul li {
+  padding: 20px 0;
+  right: 50px;
+  text-align: center;
+}
+.nav__celu ul li a {
+  font-weight: bold;
+  width: 100%;
+}
+.nav__celu:hover ul {
+  display: block;
 }
 
 main img {
@@ -254,7 +302,7 @@ body main form input {
 
 input:focus {
   border: solid 5px rgb(5, 188, 5);
-  width: 400px;
+  width: 350px;
 }
 
 body main form input:hover {
@@ -300,6 +348,11 @@ main table tr td {
 
 table {
   margin-left: 10px;
+}
+
+.boton {
+  display: flex;
+  margin: 10px 10px;
 }
 
 /* tarjeras */
@@ -353,6 +406,21 @@ table {
   object-fit: cover;
 }
 
+.carta__header {
+  position: relative;
+}
+.carta__header small {
+  padding: 8px;
+  background-color: bisque;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
 .imagen__final {
   height: 300px;
 }
@@ -404,7 +472,7 @@ table {
   overflow-y: hidden;
 }
 .estadisticas__contenedor-elemento {
-  color: black;
+  color: skyblue;
   font-size: 40px;
   text-align: center;
   margin: 31px 0;
@@ -493,6 +561,31 @@ table {
     display: block;
   }
 }
+.nav__celu i {
+  font-size: 35px;
+}
+.nav__celu ul {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 25%;
+  background-color: rgba(48, 208, 155, 0.881);
+  width: 100%;
+  display: none;
+}
+.nav__celu ul li {
+  padding: 20px 0;
+  right: 50px;
+  text-align: center;
+}
+.nav__celu ul li a {
+  font-weight: bold;
+  width: 100%;
+}
+.nav__celu:hover ul {
+  display: block;
+}
+
 main a {
   display: inline-block;
   position: relative;
@@ -575,12 +668,12 @@ iframe {
 .rrss .facebook:hover {
   color: #0000ff;
 }
-.rrss .whatsapp {
+.rrss .whatsappp {
   color: white;
   font-size: 30px;
   text-align: center;
 }
-.rrss .whatsapp:hover {
+.rrss .whatsappp:hover {
   color: #20cb20;
 }
 .rrss .google-play {
@@ -681,6 +774,11 @@ ul a {
   font-size: 25px;
 }
 
+.lista {
+  margin-left: 30px;
+  font-size: 35px;
+}
+
 .div {
   max-width: 1200px;
   margin: 0 auto;
@@ -689,12 +787,36 @@ ul a {
   justify-content: space-between;
 }
 
+.nav__celu i {
+  font-size: 35px;
+}
+.nav__celu ul {
+  position: absolute;
+  left: 0;
+  top: 21%;
+  background-color: rgba(48, 208, 155, 0.881);
+  width: 100%;
+  display: none;
+}
+.nav__celu ul li {
+  padding: 20px 0;
+  right: 50px;
+  text-align: center;
+}
+.nav__celu ul li a {
+  font-weight: bold;
+  width: 100%;
+}
+.nav__celu:hover ul {
+  display: block;
+}
+
 .ul {
   display: flex;
 }
 
-.ul li {
-  margin: 0 140px;
+.nav__compu {
+  display: none;
 }
 
 .ul li:active {
@@ -845,11 +967,11 @@ iframe {
 .footer__contenedor-rrss .facebook:hover {
   color: #0000ff;
 }
-.footer__contenedor-rrss .whatsapp {
+.footer__contenedor-rrss .whatsappp {
   color: white;
   font-size: 30px;
 }
-.footer__contenedor-rrss .whatsapp:hover {
+.footer__contenedor-rrss .whatsappp:hover {
   color: #20cb20;
 }
 .footer__contenedor-rrss .google-play {
@@ -890,6 +1012,16 @@ footer {
 }
 
 @media (min-width: 768px) {
+  .nav__celu {
+    display: none;
+  }
+  .nav__compu {
+    display: flex;
+  }
+  .nav__compu li {
+    display: flex;
+    margin: 0 140px;
+  }
   .precio__carta {
     grid-template-columns: repeat(2, 1fr);
   }

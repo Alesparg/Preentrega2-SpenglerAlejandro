@@ -28,7 +28,10 @@ ul a {
     font-size: 25px;
 
 }
-
+.lista{
+    margin-left: 30px;
+    font-size: 35px;
+}
 .div{
     max-width: 1200px;
     margin: 0 auto;
@@ -38,16 +41,49 @@ ul a {
 
 }
 
+.nav__celu{
 
+    i{
+        font-size: 35px;
+    }
+
+    ul{
+        position: absolute;
+        left: 0;
+        top: 21%;
+        background-color: rgba(48, 208, 155, 0.881);
+        width: 100%;
+        display: none;
+
+        li{
+            padding: 20px 0;
+            right: 50px;
+            text-align: center;
+
+
+            a{
+                font-weight: bold;
+                width: 100%;
+            }
+
+
+        }
+    }
+
+    &:hover ul{
+        display: block;
+    }
+}
 
 .ul{
     display: flex;
 }
 
-
-.ul li{
-    margin: 0 140px;
+.nav__compu{
+    display: none;
 }
+
+
 
 .ul li:active{
     transform: scale(0.7);
@@ -83,7 +119,6 @@ width: 100px;
     font-size: 20px;
     max-width: 340px;
     margin-left: 10px;
-
 }
 
 
@@ -185,7 +220,7 @@ height: 800px;
         twitter: #87ceeb,
         instagram: #f27d90,
         facebook: #0000ff,
-        whatsapp: #20cb20,
+        whatsappp: #20cb20,
         google-play: #d81515,
         tiktok: #000000c8
         );  
@@ -226,7 +261,17 @@ h3{
 
 
 @media (min-width: 768px  ){
-    
+    .nav__celu{
+        display: none;
+    }
+
+    .nav__compu{
+        display: flex;
+     li{
+        display: flex;
+        margin: 0 140px;
+     }
+    }
     .precio__carta{
         grid-template-columns: repeat(2, 1fr);
     }
