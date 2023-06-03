@@ -5,6 +5,7 @@
     // overflow-x: hidden;
  
 }
+
 .nav__celu{
 
     i{
@@ -45,23 +46,27 @@
         display: block;
     }
 }
+
 .chat{
     position: relative;
     left: 250px;
 }
+
 .tilulo__chatp{
     display: inline-block;
     position: relative;
     max-width: 250px;
-    // max-width: 50px;
 }
+
 .display-font-sizesz{
     max-width: 250px;
 }
+
 main p{
     padding: 10px;
     max-width: 380px;
 }
+
 body{
 background-color: aquamarine;
 
@@ -77,9 +82,11 @@ span{
     padding: 10px;
     margin-left: 25px;
 }
+
 h2{
     overflow-y: hidden;
   }
+
 .chat-container {
     display: flex;
     flex-direction: column; 
@@ -179,6 +186,7 @@ h2{
         right: 20px;
         
       }
+
     @media (min-width: 768px  ){
         .display-font-sizesz{
             max-width: 650px;
@@ -191,6 +199,7 @@ h2{
             padding: 10px;
             max-width: 3800px;
         }
+
         .chat-container {
             display: flex;
             flex-direction: column; 
@@ -199,9 +208,11 @@ h2{
             border: 5px solid #f1aa1c;
             max-width: 2000px;
             }
+
             .footer__chat{
                 height: 200px;
               }
+              
               h2{
                 overflow-y: hidden;
               }

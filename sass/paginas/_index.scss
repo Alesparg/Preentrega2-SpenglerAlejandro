@@ -1,14 +1,14 @@
 .span{
-  
     overflow-y: hidden;
 }
+
 nav{
     overflow-y: hidden;
 }
+
 main{
     display: inline-block;
     margin-bottom: 30px;
-    
 }
 
 header ul{
@@ -17,21 +17,25 @@ header ul{
     background-color: rgba(48, 208, 155, 0.881);
     border: solid 3px;
 }
+
 .ul{
     display: flex;
     text-decoration: aquamarine;
     color: aquamarine;
     border: aquamarine;
 } 
+
 ul a {
     text-decoration: none;
     font-size: 25px;
 
 }
+
 .lista{
     margin-left: 30px;
     font-size: 35px;
 }
+
 .div{
     max-width: 1200px;
     margin: 0 auto;
@@ -96,14 +100,16 @@ ul a {
    font-size: 3px;
    overflow-y: hidden;
 }
+
 .display-font-sizes{
 font-size: 20px;
 max-width: 220px;
 }
-.container{
 
+.container{
     display: none;
 }
+
 .d-block{
    display: none;
 }
@@ -167,7 +173,6 @@ iframe{
 
 .mapita{
     display: flex;
-    /* justify-content: center; */
     padding: 20px;
     max-width: 340px;
     transition: 1s;
@@ -186,15 +191,19 @@ iframe{
 .horarios{
     overflow-y: hidden;
 }
+
 .footer__index{
 height: 800px;
 }
+
 .color__a{
     color: black;
 }
+
 .color__a:hover{
     color: orange;
 }
+
 .footer{
     padding: 60px 20px;
 
@@ -240,6 +249,7 @@ height: 800px;
       
     }
 }
+
   footer ul{
     color: aquamarine;
   }
@@ -251,10 +261,12 @@ height: 800px;
 h3{
     overflow-y: hidden;
 }
+
   .footer__copy{
     margin-bottom: 40px;
     text-align: center;
   }
+
   footer{
     background-image: linear-gradient(aquamarine 0% 5%, rgb(5, 66, 46));
     }
@@ -284,6 +296,7 @@ h3{
         height: 500px;
         max-width: 5000px;
     }
+
     header h1{
         position: relative;
        left: 20px;
@@ -292,6 +305,7 @@ h3{
        max-width: 2500px;
        overflow-y: hidden;
     }
+    
     .display-font-sizes{
         position: relative;
         left: 240px;
@@ -299,14 +313,17 @@ h3{
         font-size: 30px;
         max-width: 600px;
         }
+
         .container{
         display: block;
         }
+
         .display-font-sizesp{
             font-size: 40px;
             max-width: 3600px;
             margin-left: 10px;
         }
+
         main a{
             display: inline-block;
     font-size: 34px;
@@ -320,6 +337,7 @@ h3{
     text-align: center;
             max-width: 5000px;
         }
+
         .textoUbicacion{
             font-size: 35px;
             margin-left: 10px;
@@ -327,6 +345,7 @@ h3{
             text-align: center;
             max-width: 3200px;
         }
+
         .textoUbicacion::before{
             content: '👇';
             display: inline-block;
@@ -336,11 +355,13 @@ h3{
             content: '👇';
             display: inline-block;
         }
+
         .mapita{
             display: flex;
             justify-content: center;
             max-width: 1900px;
         }
+
         .horarios__titulo{
             display: inline-block;
             position: relative;
@@ -350,9 +371,11 @@ h3{
         .footer__index{
             height: 400px;
             }
+
             .footer__contenedor{
                 grid-template-columns: repeat(3, 1fr);
             }
+            
         }
 
         @media (min-width: 913px  ){

@@ -436,8 +436,6 @@ table {
   margin-bottom: 40px;
 }
 
-/* h2{
-   /* margin-bottom: 150px; */
 .precio__verde {
   background-color: green;
   color: white;
@@ -496,7 +494,6 @@ table {
     left: 250px;
     bottom: 120px;
     max-width: 2500px;
-    /* border: solid 1px black; */
   }
   body main form label {
     display: block;
@@ -531,20 +528,6 @@ table {
   .precio__titulo::after {
     content: "👈";
     display: inline-block;
-  }
-}
-@media (min-width: 992px) {
-  .precio__carta {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .imagen {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .ul {
-    display: flex;
-  }
-  header nav ul a {
-    display: block;
   }
 }
 @media (min-width: 992px) {
@@ -898,7 +881,6 @@ iframe {
 
 .mapita {
   display: flex;
-  /* justify-content: center; */
   padding: 20px;
   max-width: 340px;
   transition: 1s;
