@@ -46,15 +46,16 @@
         <p class="display-6 texto__principal">Si quiere contratar nuestro servicio complete los datos solicitados y luego presione el botón enviar, después de haber hecho eso seleccioné cual plan de contratación le parece mejor.</p>
         <form action="" method="" enctype="">
             <section>
+                <script src="contratar.js"></script>
             <label for="Nombre">Nombre</label>
-            <input type="text" placeholder="Ingrese su nombre" id="Nombre" />
+            <input type="text" placeholder="Ingrese su nombre" id = 'nombre' />
             <label for="Apellido">Apellido</label>
             <input type="text" placeholder="Ingrese su apellido" id="apellido"/>
             <label for="Edad">Edad</label>
             <input type="text" placeholder="Ingrese su edad" id="edad">
             <label for="Email">Email</label>
             <input type="Email" placeholder="Ingrese su email" id="email" />
-            
+        
         </section>
         <input class="checkboxh" type="checkbox" id="check" />
             <label for="check">Acepta termino y condiciones</label>
@@ -75,9 +76,10 @@
             <option value="Persona unica">Persona unica</option>
         </select>
         <section class="boton"> 
-            <button>Enviar</button>
+            <button onclick="mostrarAlerta(),validarEmail() "  >Enviar</button>
             <button type="reset"> Resetear</button>
         </section>
+       
 
             
   
@@ -92,6 +94,7 @@
                 <option value="Transferencia Bancaria">Transferencia Bancaria</option>
                 <option value="Mercado pago">Mercado pago</option>
             </select>
+           
 
 
 <!-- </table> -->
@@ -108,7 +111,7 @@
 </div>
 <h2 class="carta__titulo">Servicio de 1 mes</h2>
 <p class="carta__descripcion">Nuestro servicio de pruebas ofrece una evaluación exhaustiva y precisa de los registros financieros y contables de su empresa. Realizamos pruebas rigurosas para garantizar la integridad y exactitud de los datos, identificando posibles errores y brechas de cumplimiento. Además, brindamos informes detallados que le permiten tomar decisiones informadas y mejorar la eficiencia de su negocio. Confíe en nuestro servicio de pruebas para obtener tranquilidad y confianza en sus operaciones contables</p>
-<p class="precio__verde">Precio $50000</p>
+<p class="precio__verde">Precio sin iva $50000  <button onclick="calcularPrecio(50000)">Precio con iva y descuento</button></p> 
 </article>
 <article class="carta border border-5 ">
     <div class="carta__header">
@@ -117,7 +120,7 @@
     </div>
     <h2 class="carta__titulo">Servicio de 3 mes</h2>
     <p class="carta__descripcion">Nuestro servicio de tres meses ofrece un análisis profundo y detallado de sus operaciones financieras. Realizamos una revisión exhaustiva de sus registros contables, identificando errores, inconsistencias y oportunidades de mejora. Además, ofrecemos asesoramiento especializado para optimizar la gestión financiera de su empresa y maximizar su rentabilidad. Con nuestro servicio, obtendrá una visión estratégica de su situación contable para impulsar el crecimiento y el éxito de su negocio. </p>
-    <p class="precio__verde">Precio $100000</p>
+    <p class="precio__verde">Precio sin iva $100000 <button onclick="calcularPrecio(100000)">Precio con iva y descuento</button></p>
     </article> 
     <article class="carta border border-5">
         <div class="carta__header">
@@ -127,7 +130,7 @@
         </div>
         <h2 class="carta__titulo">Servicio de 6 meses</h2>
         <p class="carta__descripcion">Nuestro servicio de seis meses ofrece un análisis exhaustivo y continuo de sus operaciones financieras durante un periodo extendido. Realizamos una revisión rigurosa de sus registros contables, identificando errores, inconsistencias y áreas de mejora a lo largo del tiempo. Además, brindamos asesoramiento estratégico para optimizar su gestión financiera, controlar costos y maximizar sus beneficios. Con nuestro servicio de seis meses, obtendrá una visión completa y actualizada de su situación contable para lograr el éxito a largo plazo de su empresa.</p>
-        <p class="precio__verde">Precio $150000</p>
+        <p class="precio__verde">Precio sin iva $150000 <button onclick="calcularPrecio(150000)">Precio con iva y descuento</button></p>
         </article>
         <article class="carta border border-5">
             <div class="carta__header">
@@ -137,7 +140,7 @@
             </div>
             <h2 class="carta__titulo">Servicio de 1 año</h2>
             <p class="carta__descripcion">Nuestro servicio de un año ofrece un análisis integral y continuado de sus operaciones financieras. Realizamos una revisión exhaustiva y detallada de sus registros, identificando posibles errores, brechas y oportunidades de optimización a lo largo del tiempo. Además, brindamos asesoramiento estratégico y personalizado para fortalecer su gestión financiera, mejorar la eficiencia y maximizar los resultados. Con nuestro servicio de un año, obtendrá una visión completa de su situación contable, brindándole la confianza y el respaldo necesarios para alcanzar el éxito sostenible en su negocio.</p>
-            <p class="precio__verde">Precio $300000</p>
+            <p class="precio__verde">Precio sin iva $300000 <button onclick="calcularPrecio(300000)">Precio con iva y descuento</button></p>
             </article>
             <article class="carta border border-5">
                 <div class="carta__header">
@@ -147,7 +150,7 @@
                 </div>
                 <h2 class="carta__titulo">Servicio de 2 año</h2>
                 <p class="carta__descripcion">Nuestro servicio de dos años ofrece un análisis profundo de sus operaciones financieras a lo largo de un periodo. Realizamos una revisión minuciosa y precisa de sus registros, detectando errores, identificando tendencias y generando informes detallados. Además, brindamos asesoramiento estratégico y personalizado para mejorar la gestión financiera, los procesos y maximizar los resultados a largo plazo. Con nuestro servicio de dos años, obtendrá una visión actualizada de su situación contable, permitiéndole tomar decisiones y lograr un crecimiento sostenible en su negocio.</p>
-                <p class="precio__verde">Precio $600000</p>
+                <p class="precio__verde">Precio sin iva $600000 <button onclick="calcularPrecio(600000)">Precio con iva y descuento</button></p>
                 </article>
                 <article class="carta border border-5">
                     <div class="carta__header">
@@ -157,9 +160,11 @@
                     </div>
                     <h2 class="carta__titulo">Servicio de 3 año</h2>
                     <p class="carta__descripcion">Nuestro servicio de tres años ofrece un análisis exhaustivo y estratégico de sus operaciones financieras a lo largo de un periodo prolongado. Realizamos una revisión integral de sus registros contables, detectando posibles errores, identificando patrones y tendencias clave. Además, brindamos asesoramiento especializado para fortalecer su gestión financiera, optimizar la rentabilidad y tomar decisiones informadas a largo plazo. Con nuestro servicio de tres años, obtendrá una visión profunda y precisa de su situación contable, permitiéndole establecer una base sólida y alcanzar el éxito sostenible en su negocio.</p>
-                    <p class="precio__verde">Precio $900000</p>
+                    <p class="precio__verde">Precio sin iva $900000 <button onclick="calcularPrecio(900000)">Precio con iva y descuento</button></p>
                     </article>
 </div>
+<button class="comprar" onclick="calcularTotal()">Comprar</button>
+
 </section>
 <section class="estadisticas">
     <div class="estadisticas__contenedor">
@@ -170,12 +175,14 @@
 </section>
 
 
+
 </main>
 
 
 
 
     <footer>
+        
         <h3>Sumate a Contaduria Soledad y mejora tus finansas</h3>
           <div class="rrss">
             <a class="twitter" href=""><i class="bi bi-twitter"></i></a>

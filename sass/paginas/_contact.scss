@@ -247,6 +247,11 @@ height: 300px;
     background-color: rgb(27, 215, 27);
 }
 
+.comprar{
+    width: 200px;
+    height: 50px;
+    margin-left: 90px;
+}
 
 .estadisticas{
     margin-top: 80px;
@@ -280,6 +285,8 @@ height: 300px;
         }
     }
 }
+
+
 
 @media (min-width: 768px){
    main a{
@@ -337,7 +344,12 @@ height: 300px;
         content: '👈';
        display: inline-block;
     }
-
+    .comprar{
+        width: 200px;
+        height: 50px;
+        margin-top: 15px;
+        margin-left: 660px;
+    }
 }
 
 @media (min-width: 992px ){
