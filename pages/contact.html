@@ -76,7 +76,7 @@
             <option value="Persona unica">Persona unica</option>
         </select>
         <section class="boton"> 
-            <button onclick="mostrarAlerta(),validarEmail() "  >Enviar</button>
+            <button onclick="mostrarAlerta(),validarEmail(),mostrarContrasena()"  >Enviar</button>
             <button type="reset"> Resetear</button>
         </section>
        
@@ -163,7 +163,7 @@
                     <p class="precio__verde">Precio sin iva $900000 <button onclick="calcularPrecio(900000)">Precio con iva y descuento</button></p>
                     </article>
 </div>
-<button class="comprar" onclick="calcularTotal()">Comprar</button>
+<button class="comprar" onclick="realizarPedido()">Comprar</button>
 
 </section>
 <section class="estadisticas">

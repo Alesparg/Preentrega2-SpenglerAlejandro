@@ -9,9 +9,16 @@ function mostrarAlerta() {
       alert("No has ingresado tu nombre.");
     } else {
       var mensaje = "Nombre: " + nombre + "\nApellido: " + apellido + "\nEdad: " + edad;
-      alert(mensaje);
+      
+      alert(mensaje );
+     
     }
   }
+
+
+
+
+
 
   function validarEmail() {
     let email = document.getElementById("email").value;
@@ -27,83 +34,128 @@ function mostrarAlerta() {
 
 
 
-  function calcularPrecio(precioPrincipal) {
-    let iva = 0.21;
-    let descuento = 0.05;
-    
-    let precioConIVA = precioPrincipal * (1 + iva);
-    let precioConDescuento = precioConIVA * (1 - descuento);
-    
-    // Crear el mensaje de explicación
-    let mensaje = "El precio principal es: " + precioPrincipal +
-                  "\n\nSe aplica un 21% de IVA: " + (precioPrincipal * iva) +
-                  "\n\nDespués de agregar el IVA, el precio es: " + precioConIVA +
-                  "\n\nSe aplica un descuento invernal del 5%: " + (precioConIVA * descuento) +
-                  "\n\nEl precio final con descuento es: " + precioConDescuento;
-    
-    // Mostrar el mensaje en un cuadro de alerta
-    alert(mensaje);
-  }   
 
-  
-  const comprarProductos = () => {
-    let producto = ''
-    let cantidad = 0
-    let precio = 0
-    let subtotal = 0
-    let seguirComprando = true
-  
-    do {
-       producto = prompt('¿Cual servicio deseas comprar Mes de prueba, 3 meses, 6 meses, 1 año, 2 años, 3 años?')
-       cantidad = parseInt(prompt('¿Cuántos quieres comprar?'))
-  
-      let cantidadValidada = validarCantidad(cantidad)
-  
-      switch (producto) {
-        case 'Mes de prueba':
-          precio = 57475
-          break;
-        case '3 meses':
-          precio = 114950
-          break;
-        case '6 meses':
-          precio = 172425
-          break;
-          case '1 año':
-          precio = 344850
-          break;
-          case '2 años':
-          precio = 689700
-          break;
-          case '3 años':
-          precio = 1034550
-          break;
-        default:
-          alert('Alguno de los datos ingresados no es correcto')
-          precio = 0
-          cantidadValidada = 0
-      }
-  
-      subtotal += precio * cantidadValidada
-  
-      seguirComprando = confirm('¿Deseas seguir comprando?')
-    } while (seguirComprando);
-  
-    return subtotal
-  }
 
-  const validarCantidad = (cantidad) => {
-    // Validar si el usuario ingresa un número negativo o no ingresa un número válido
-    while (Number.isNaN(cantidad) || cantidad <= 0) {
-      alert('Debes ingresar una cantidad válida!')
-      cantidad = parseInt(prompt('¿Cuántos quieres comprar?'))
+
+
+  const generarContrasena = (longitud) => {
+    const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let contrasena = '';
+
+    for (let i = 0; i < longitud; i++) {
+      const indice = Math.floor(Math.random() * caracteres.length);
+      contrasena += caracteres.charAt(indice);
     }
-  
-    return cantidad
+
+    return contrasena;
   }
 
-  const calcularTotal = () => {
-    let total = comprarProductos()
-    alert('El total de tu compra es: ' + total)
+  const longitudContrasena = 10;
+
+  const mostrarContrasena = () => {
+    const contrasenaAleatoria = generarContrasena(longitudContrasena);
+    alert("Su contraseña es: "+ contrasenaAleatoria);
   }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    
+
+    
+  });
+
   
+ 
+  
+
+
+  function comprarProductos() {
+    let productoId = 0;
+    let productoSeleccionado = null;
+
+    while (!productoSeleccionado) {
+      productoId = parseInt(prompt(
+        "¿Qué producto desea comprar, ingrese el numero?:\n" +
+        "1: Mes de prueba ($50000)\n" +
+        "2: Tres meses ($100000)\n" +
+        "3: Seis meses ($150000)\n" +
+        "4: Un año ($300000)\n" +
+        "5: Dos años ($600000)\n" +
+        "6: Tres años ($900000)"
+      ));
+
+      productoSeleccionado = productos.find(producto => producto.id === productoId);
+    }
+
+    let cantidadProducto = 0;
+    while (!cantidadProducto || cantidadProducto === 0) {
+      cantidadProducto = parseInt(prompt("Producto elegido: " + productoSeleccionado.nombre + "\nIntroduzca la cantidad deseada (sólo números):"));
+    }
+
+    const pedido = new Pedido(productoSeleccionado.nombre, productoSeleccionado.precio, cantidadProducto);
+
+  
+
+    return pedido;
+  }
+
+  class Pedido {
+    constructor(producto, precio, cantidad) {
+      this.producto = producto;
+      this.precio = precio;
+      this.cantidad = cantidad;
+      this.descuento = 0;
+      this.subTotal = 0;
+      this.total = 0;
+    }
+
+    calcularSubTotal() {
+      this.subTotal = this.precio * this.cantidad;
+    }
+
+    calcularIva() {
+      return this.subTotal * 0.21;
+    }
+
+    calcularDescuento() {
+      this.descuento = this.subTotal * 0.05;
+    }
+
+    calcularTotal() {
+      this.total = this.subTotal - this.descuento+ this.calcularIva();
+    }
+  }
+
+  const productos = [
+    { id: 1, nombre: "Mes de prueba", precio: 50000 },
+    { id: 2, nombre: "tres meses", precio: 100000 },
+    { id: 3, nombre: "Seis meses", precio: 150000 },
+    { id: 4, nombre: "Un año", precio: 300000 },
+    { id: 5, nombre: "Dos años", precio: 600000 },
+    { id: 6, nombre: "Tres años", precio: 900000 }
+  ];
+  for (const producto of productos) {
+    console.log(producto.nombre);
+  }
+  for (const producto of productos) {
+    console.log(producto.id);
+  }
+  for (const producto of productos) {
+    console.log(producto.precio);
+  }
+
+  function realizarPedido() {
+    const pedido = comprarProductos();
+    
+
+    pedido.calcularSubTotal();
+    pedido.calcularDescuento();
+    pedido.calcularTotal();
+
+    alert(`Detalle del pedido:
+- ${pedido.producto} x ${pedido.cantidad}: $${pedido.subTotal}
+- IVA 21%: $${pedido.calcularIva()}
+- Descuento invernal: $${pedido.descuento}
+Total = $${pedido.total}`);
+
+
+  }
