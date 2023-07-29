@@ -1,36 +1,66 @@
-
 function mostrarAlerta() {
-    let nombre = document.getElementById("nombre").value;
-    let apellido = document.getElementById("apellido").value;
-    let edad = document.getElementById("edad").value;
-    
+  let nombre = document.getElementById("nombre").value;
+  let apellido = document.getElementById("apellido").value;
+  let edad = document.getElementById("edad").value;
 
-    if (nombre === "") {
+  if (nombre === "") {
       alert("No has ingresado tu nombre.");
-    } else {
-      var mensaje = "Nombre: " + nombre + "\nApellido: " + apellido + "\nEdad: " + edad;
+  } else {
+      let mensaje = "Nombre: " + nombre + "\nApellido: " + apellido + "\nEdad: " + edad;
+      alert(mensaje);
+
       
-      alert(mensaje );
-     
-    }
+      let datosPersonales = {
+          nombre: nombre,
+          apellido: apellido,
+          edad: edad
+      };
+      sessionStorage.setItem('DatosPersonales', JSON.stringify(datosPersonales));
   }
+}
 
 
 
 
 
 
-  function validarEmail() {
-    let email = document.getElementById("email").value;
-    let confirmacion = prompt("Confirma tu dirección de correo electrónico:", "");
 
-    if (email === confirmacion) {
+
+
+function registrar() {
+  const edadInput = document.getElementById('edad');
+  const edad = parseInt(edadInput.value);
+
+  if (edad < 18) {
+    alert('Lo siento, debes tener al menos 18 años para registrarte.');
+  } else {
+    const horaDeRegistro = new Date().toISOString();
+    sessionStorage.setItem('horaDeRegistro', horaDeRegistro);
+    alert('¡Registro exitoso! Tu información ha sido guardada.');
+  }
+}
+
+
+
+
+
+
+
+
+function validarEmail() {
+  let email = document.getElementById("email").value;
+  let confirmacion = prompt("Confirma tu dirección de correo electrónico:", "");
+
+  if (email === confirmacion) {
       alert("¡El email ha sido confirmado correctamente!");
-    } else {
+
+      
+      sessionStorage.setItem('EmailCliente', email);
+  } else {
       alert("El email y la confirmación no coinciden. Inténtalo de nuevo.");
       validarEmail();
-    }
   }
+}
 
 
 
@@ -38,34 +68,67 @@ function mostrarAlerta() {
 
 
 
-  const generarContrasena = (longitud) => {
-    const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let contrasena = '';
 
-    for (let i = 0; i < longitud; i++) {
+
+const generarContrasena = (longitud) => {
+  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let contrasena = '';
+
+  for (let i = 0; i < longitud; i++) {
       const indice = Math.floor(Math.random() * caracteres.length);
       contrasena += caracteres.charAt(indice);
-    }
-
-    return contrasena;
   }
 
-  const longitudContrasena = 10;
+  return contrasena;
+}
 
-  const mostrarContrasena = () => {
-    const contrasenaAleatoria = generarContrasena(longitudContrasena);
-    alert("Su contraseña es: "+ contrasenaAleatoria);
-  }
+const longitudContrasena = 10;
 
-  window.addEventListener('DOMContentLoaded', () => {
-    
+const mostrarContrasena = () => {
+  const contrasenaAleatoria = generarContrasena(longitudContrasena);
+  alert("Su contraseña es: " + contrasenaAleatoria );
 
-    
-  });
-
-  
  
+  localStorage.setItem('Contraseña', contrasenaAleatoria);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
   
+});
+
+
+  
+
+  
+
+
+
+function generarid() {
+  const edadInput = document.getElementById('edad');
+  const edad = parseInt(edadInput.value);
+
+  if (!isNaN(edad)) {
+  
+    const personaId = RandomId();
+
+    alert(`Este es su ID personal: ${personaId}`);
+
+    localStorage.setItem('personalId', personaId);
+  } else {
+    alert('Por favor, ingrese una edad válida.');
+  }
+}
+
+const RandomId = () => {
+  return Math.floor(Math.random() * Date.now()).toString(36);
+};
+
+
+  
+
+
+ 
+
 
 
   function comprarProductos() {
@@ -133,15 +196,15 @@ function mostrarAlerta() {
     { id: 5, nombre: "Dos años", precio: 600000 },
     { id: 6, nombre: "Tres años", precio: 900000 }
   ];
-  for (const producto of productos) {
-    console.log(producto.nombre);
-  }
-  for (const producto of productos) {
-    console.log(producto.id);
-  }
-  for (const producto of productos) {
-    console.log(producto.precio);
-  }
+  // for (const producto of productos) {
+  //   console.log(producto.nombre);
+  // }
+  // for (const producto of productos) {
+  //   console.log(producto.id);
+  // }
+  // for (const producto of productos) {
+  //   console.log(producto.precio);
+  // }
 
   function realizarPedido() {
     const pedido = comprarProductos();
@@ -157,5 +220,31 @@ function mostrarAlerta() {
 - Descuento invernal: $${pedido.descuento}
 Total = $${pedido.total}`);
 
-
+sessionStorage.setItem('Compra', JSON.stringify(pedido));
   }
+
+// localStorage.removeItem('');
+// localStorage.clear()
+
+
+
+
+
+  const container = document.querySelector('.form')
+  form.addEventListener('click', (e) => {
+    console.log(e.target);
+  })
+//   const getTaskStorage = () => {
+//     const tasksStorage = JSON.parse(sessionStorage.getItem('DatosPersonales'))
+//     return tasksStorage
+// }
+
+// const getTasks = () => {
+//   if (localStorage.getItem('DatosPersonales')) {
+//       tasks = getTaskStorage()
+//       showTasks(tasks)
+//   }
+// }
+  
+// document.addEventListener('DOMContentLoaded', DatosPersonales)
+

@@ -44,13 +44,13 @@
         <a href="../index.html">Volver a plataforma</a>
         
         <p class="display-6 texto__principal">Si quiere contratar nuestro servicio complete los datos solicitados y luego presione el botón enviar, después de haber hecho eso seleccioné cual plan de contratación le parece mejor.</p>
-        <form action="" method="" enctype="">
+        <form id = "form" action="" method="" enctype="">
             <section>
                 <script src="contratar.js"></script>
             <label for="Nombre">Nombre</label>
             <input type="text" placeholder="Ingrese su nombre" id = 'nombre' />
             <label for="Apellido">Apellido</label>
-            <input type="text" placeholder="Ingrese su apellido" id="apellido"/>
+            <input  type="text" placeholder="Ingrese su apellido" id="apellido"/>
             <label for="Edad">Edad</label>
             <input type="text" placeholder="Ingrese su edad" id="edad">
             <label for="Email">Email</label>
@@ -76,7 +76,7 @@
             <option value="Persona unica">Persona unica</option>
         </select>
         <section class="boton"> 
-            <button onclick="mostrarAlerta(),validarEmail(),mostrarContrasena()"  >Enviar</button>
+            <button type="submit" value="enviar" onclick="mostrarAlerta(),validarEmail(),mostrarContrasena(),generarid(),registrar()"  >Enviar</button>
             <button type="reset"> Resetear</button>
         </section>
        
