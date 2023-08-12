@@ -286,7 +286,11 @@ height: 300px;
     }
 }
 
+.boton__enviar{
 
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 @media (min-width: 768px){
    main a{
@@ -350,6 +354,17 @@ height: 300px;
         margin-top: 15px;
         margin-left: 660px;
     }
+   .seleccione__empresa{
+    position: relative;
+    bottom: 55px;
+   }
+    .boton__enviar{
+        top: 45px;
+        margin-left: -225px;
+        margin-top: 55px;
+        margin-bottom: 5px;
+    }
+
 }
 
 @media (min-width: 992px ){

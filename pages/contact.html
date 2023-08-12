@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
     <script>src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"</script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('sY6cuapXui1ECU3mi')
+      </script>
     <link rel="stylesheet" href="../css2/style.css">
     <link rel="stylesheet" href="../diseño/main.css">
     <link rel="shortcut icon" href="../assets/Pequeños y fuertes.ico">
@@ -44,61 +49,61 @@
         <a href="../index.html">Volver a plataforma</a>
         
         <p class="display-6 texto__principal">Si quiere contratar nuestro servicio complete los datos solicitados y luego presione el botón enviar, después de haber hecho eso seleccioné cual plan de contratación le parece mejor.</p>
-        <form id = "form" action="" method="" enctype="">
-            <section>
-                <script src="contratar.js"></script>
-            <label for="Nombre">Nombre</label>
-            <input type="text" placeholder="Ingrese su nombre" id = 'nombre' />
-            <label for="Apellido">Apellido</label>
-            <input  type="text" placeholder="Ingrese su apellido" id="apellido"/>
-            <label for="Edad">Edad</label>
-            <input type="text" placeholder="Ingrese su edad" id="edad">
-            <label for="Email">Email</label>
-            <input type="Email" placeholder="Ingrese su email" id="email" />
-        
-        </section>
-        <input class="checkboxh" type="checkbox" id="check" />
-            <label for="check">Acepta termino y condiciones</label>
+     
+    <form id="registroForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" placeholder="Ingrese su nombre" id="nombre" required><br>
 
-            <label for="pais">Seleccione su pais</label>
-            <select name="" id="pais">
-                <option value="argentina">Argentina</option>
-                <option value="uruguay">Uruguay</option>
-                <option value="paraguay">Paraguay</option>
-                <option value="bolivia">Bolivia</option>
-                <option value="chile">Chile</option>
-            </select>
-            <label for="Empresa">Seleccione su empresa</label>
-            <select name="" id="tipo de empresa">
-            <option value="pequeña">Empresa pequeña</option>
-            <option value="mediana">Empresa mediana</option>
-            <option value="grande">Empresa grande</option>
-            <option value="Persona unica">Persona unica</option>
-        </select>
-        <section class="boton"> 
-            <button type="submit" value="enviar" onclick="mostrarAlerta(),validarEmail(),mostrarContrasena(),generarid(),registrar()"  >Enviar</button>
-            <button type="reset"> Resetear</button>
-        </section>
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" placeholder="Ingrese su apellido" id="apellido" required><br>
+
+        <label for="edad">Edad:</label>
+        <input type="text" name="edad" placeholder="Ingrese su edad" id="edad" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="Ingrese su email" id="email" required><br>
+
+        <label for="contrasena">Contraseña generada:</label>
+        <input type="text" placeholder="Precione generar" id="contrasenaGenerada" readonly><br>
+            
+     
+
+        <button type="button" onclick="mostrarContrasena()">Generar Contraseña</button>
+        <input class="checkboxh" type="checkbox" id="check" /> 
+        <label for="check">Acepta termino y condiciones</label>
+       <label for="pais">Seleccione su pais</label>
+       <select name="" id="pais">
+           <option value="argentina">Argentina</option>
+           <option value="uruguay">Uruguay</option>
+           <option value="paraguay">Paraguay</option>
+           <option value="bolivia">Bolivia</option>
+           <option value="chile">Chile</option>
+       </select>
+       <label for="Empresa">Seleccione su empresa</label>
+       <select class="seleccione__empresa" name="" id="tipo de empresa">
+       <option value="pequeña">Empresa pequeña</option>
+       <option value="mediana">Empresa mediana</option>
+       <option value="grande">Empresa grande</option>
+       <option value="Persona unica">Persona unica</option>
+   </select> 
        
+        <input type="submit" class="boton__enviar" id="mostrarBtn" value="Enviar" onclick="enviarFormulario(),mostrarAlerta(),validarEmail(),generarid(),registrar(),guardarPais(),guardarSeleccion()">
+    </form>
 
-            
-  
+    <form id="recuperarForm">
+        <label for="clave">Ingresa la Contraseña:</label>
+        <input type="password" placeholder="Ingrese la contraseña" id="claveRecuperacion" required><br>
 
-            
+        <button type="button" onclick="recuperarDatos()">Recuperar Datos</button>
+    </form>
 
-<label for="Metodo de pago">Seleccione su metodo de pago</label>
-            <select name="" id="Metodo">
-                <option value="Tarjeta de credito">Tarjeta de credito</option>
-                <option value="Tarjeta de devito">Tarjeta de devito</option>
-                <option value="Efectivo">Efectivo</option>
-                <option value="Transferencia Bancaria">Transferencia Bancaria</option>
-                <option value="Mercado pago">Mercado pago</option>
-            </select>
+    <div id="datosRecuperados"></div>
+
+                <script src="contratar.js"></script>
            
-
-
+       
 <!-- </table> -->
-</form>
+
 
 <section class="Precio">
 <h3 class="precio__titulo display-6">Los mejores precios que puede encontrar</h3>
@@ -111,7 +116,7 @@
 </div>
 <h2 class="carta__titulo">Servicio de 1 mes</h2>
 <p class="carta__descripcion">Nuestro servicio de pruebas ofrece una evaluación exhaustiva y precisa de los registros financieros y contables de su empresa. Realizamos pruebas rigurosas para garantizar la integridad y exactitud de los datos, identificando posibles errores y brechas de cumplimiento. Además, brindamos informes detallados que le permiten tomar decisiones informadas y mejorar la eficiencia de su negocio. Confíe en nuestro servicio de pruebas para obtener tranquilidad y confianza en sus operaciones contables</p>
-<p class="precio__verde">Precio sin iva $50000  <button onclick="calcularPrecio(50000)">Precio con iva y descuento</button></p> 
+<p class="precio__verde">Precio sin iva $50000 <button id="calcular50">Precio con iva y descuento</button>
 </article>
 <article class="carta border border-5 ">
     <div class="carta__header">
@@ -120,7 +125,7 @@
     </div>
     <h2 class="carta__titulo">Servicio de 3 mes</h2>
     <p class="carta__descripcion">Nuestro servicio de tres meses ofrece un análisis profundo y detallado de sus operaciones financieras. Realizamos una revisión exhaustiva de sus registros contables, identificando errores, inconsistencias y oportunidades de mejora. Además, ofrecemos asesoramiento especializado para optimizar la gestión financiera de su empresa y maximizar su rentabilidad. Con nuestro servicio, obtendrá una visión estratégica de su situación contable para impulsar el crecimiento y el éxito de su negocio. </p>
-    <p class="precio__verde">Precio sin iva $100000 <button onclick="calcularPrecio(100000)">Precio con iva y descuento</button></p>
+    <p class="precio__verde">Precio sin iva $100000 <button id="calcular100">Precio con iva y descuento</button></p>
     </article> 
     <article class="carta border border-5">
         <div class="carta__header">
@@ -130,7 +135,7 @@
         </div>
         <h2 class="carta__titulo">Servicio de 6 meses</h2>
         <p class="carta__descripcion">Nuestro servicio de seis meses ofrece un análisis exhaustivo y continuo de sus operaciones financieras durante un periodo extendido. Realizamos una revisión rigurosa de sus registros contables, identificando errores, inconsistencias y áreas de mejora a lo largo del tiempo. Además, brindamos asesoramiento estratégico para optimizar su gestión financiera, controlar costos y maximizar sus beneficios. Con nuestro servicio de seis meses, obtendrá una visión completa y actualizada de su situación contable para lograr el éxito a largo plazo de su empresa.</p>
-        <p class="precio__verde">Precio sin iva $150000 <button onclick="calcularPrecio(150000)">Precio con iva y descuento</button></p>
+        <p class="precio__verde">Precio sin iva $150000 <button id="calcular150">Precio con iva y descuento</button></p>
         </article>
         <article class="carta border border-5">
             <div class="carta__header">
@@ -140,7 +145,7 @@
             </div>
             <h2 class="carta__titulo">Servicio de 1 año</h2>
             <p class="carta__descripcion">Nuestro servicio de un año ofrece un análisis integral y continuado de sus operaciones financieras. Realizamos una revisión exhaustiva y detallada de sus registros, identificando posibles errores, brechas y oportunidades de optimización a lo largo del tiempo. Además, brindamos asesoramiento estratégico y personalizado para fortalecer su gestión financiera, mejorar la eficiencia y maximizar los resultados. Con nuestro servicio de un año, obtendrá una visión completa de su situación contable, brindándole la confianza y el respaldo necesarios para alcanzar el éxito sostenible en su negocio.</p>
-            <p class="precio__verde">Precio sin iva $300000 <button onclick="calcularPrecio(300000)">Precio con iva y descuento</button></p>
+            <p class="precio__verde">Precio sin iva $300000 <button id="calcular300">Precio con iva y descuento</button></p>
             </article>
             <article class="carta border border-5">
                 <div class="carta__header">
@@ -150,7 +155,7 @@
                 </div>
                 <h2 class="carta__titulo">Servicio de 2 año</h2>
                 <p class="carta__descripcion">Nuestro servicio de dos años ofrece un análisis profundo de sus operaciones financieras a lo largo de un periodo. Realizamos una revisión minuciosa y precisa de sus registros, detectando errores, identificando tendencias y generando informes detallados. Además, brindamos asesoramiento estratégico y personalizado para mejorar la gestión financiera, los procesos y maximizar los resultados a largo plazo. Con nuestro servicio de dos años, obtendrá una visión actualizada de su situación contable, permitiéndole tomar decisiones y lograr un crecimiento sostenible en su negocio.</p>
-                <p class="precio__verde">Precio sin iva $600000 <button onclick="calcularPrecio(600000)">Precio con iva y descuento</button></p>
+                <p class="precio__verde">Precio sin iva $600000 <button id="calcular600">Precio con iva y descuento</button></p>
                 </article>
                 <article class="carta border border-5">
                     <div class="carta__header">
@@ -160,7 +165,7 @@
                     </div>
                     <h2 class="carta__titulo">Servicio de 3 año</h2>
                     <p class="carta__descripcion">Nuestro servicio de tres años ofrece un análisis exhaustivo y estratégico de sus operaciones financieras a lo largo de un periodo prolongado. Realizamos una revisión integral de sus registros contables, detectando posibles errores, identificando patrones y tendencias clave. Además, brindamos asesoramiento especializado para fortalecer su gestión financiera, optimizar la rentabilidad y tomar decisiones informadas a largo plazo. Con nuestro servicio de tres años, obtendrá una visión profunda y precisa de su situación contable, permitiéndole establecer una base sólida y alcanzar el éxito sostenible en su negocio.</p>
-                    <p class="precio__verde">Precio sin iva $900000 <button onclick="calcularPrecio(900000)">Precio con iva y descuento</button></p>
+                    <p class="precio__verde">Precio sin iva $900000 <button id="calcular900">Precio con iva y descuento</button></p>
                     </article>
 </div>
 <button class="comprar" onclick="realizarPedido()">Comprar</button>
